@@ -45,7 +45,7 @@ def number_generator():  # Генерируем случайное число о
     return secret_number_str
 
 
-def taurus_check(input_number, random_number):  #функция проверки количества быков и коров
+def taurus_check(input_number, random_number):  # функция проверки количества быков и коров
     bulls = 0
     cows = 0
     for i in range(4):
@@ -64,7 +64,7 @@ def different_numbers_check(check_number):  # функция проверки у
     return False
 
 
-def player_inputs_check():  #Проверка правильности ввода
+def player_inputs_check():  # Проверка правильности ввода
     while True:
         try:
             player_input = int(input('Введите четырехзначное число, с различными цифрами:\n'))
@@ -72,10 +72,10 @@ def player_inputs_check():  #Проверка правильности ввод�
             print('Вы ввели не число')
             continue
         if not 1000 <= player_input <= 9999:
-            print('Вы ввели не четырехчначное число')
+            print('Вы ввели не четырехзначное число')
             continue
         elif different_numbers_check(player_input):
-            print('Не все цирфы уникальны в числе')
+            print('Не все цифры уникальные в числе')
             continue
         return str(player_input)
 
@@ -91,7 +91,7 @@ def bulls_and_cows_game():
         player_input = player_inputs_check()
         print(taurus_check(player_input, games_number))
         if taurus_check(player_input, games_number) == f'bulls: 4, cows: 0':
-            return f'Поздравляю загаданное число {games_number}'
+            return f'Поздравляю, загаданное число {games_number}'
     return f'Отличная попытка, но мы загадали число {games_number}, попробуйте уменьшить сложность и сыграть ещё раз'
 
 
